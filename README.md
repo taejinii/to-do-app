@@ -3,9 +3,9 @@
 
 https://user-images.githubusercontent.com/96623949/207254966-322d6e8d-a10a-40a8-ae87-4ab12ec138d8.mov
 
-CRUD 기능 구현 완료
-로그인 페이지 구현 완료 (참조: https://stackoverflow.com/users/login)
-날씨api를 이용한 날씨검색기능 구현 (출처 : https://openweathermap.org/api)
+CRUD 기능 구현 완료<br/>
+로그인 페이지 구현 완료 (참조: https://stackoverflow.com/users/login)<br/>
+날씨api를 이용한 날씨검색기능 구현 (출처 : https://openweathermap.org/api)<br/>
 서버는 json server를 사용하였습니다.
 
 
