@@ -22,6 +22,7 @@ export const TaskInput = styled.input`
 
 const TasksEditor = () => {
   const [task, setTask] = useState("");
+  const [date, setDate] = useState(new Date().getTime());
   const textInput = useRef();
   const handleChangeState = (e) => {
     setTask(e.target.value);
@@ -36,6 +37,8 @@ const TasksEditor = () => {
     } else {
       const newTask = {
         task,
+        date,
+        isComplete: false,
       };
       fetch("http://localhost:3001/data", {
         method: "POST",

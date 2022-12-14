@@ -4,12 +4,21 @@
 body {
   background-color: #f1f2f3;
 }
+.home-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.react-calendar {
+  height: 450px;
+}
 .taskItemBox {
   margin-top: 15px;
   border: 1px solid black;
   text-align: center;
   width: 450px;
-  height: 60px;
+  height: 80px;
   display: flex;
   margin-bottom: 20px;
   border-radius: 10px;
@@ -56,12 +65,13 @@ body {
   text-align: center;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 50%;
   height: 90vh;
 }
 .taskBox {
   width: 330px;
 }
+
 .task-list {
   height: 500px;
   overflow: auto;

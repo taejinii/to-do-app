@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-
 import Button from "./Button";
 
 const ChckedTask = () => {
@@ -10,13 +9,41 @@ const ChckedTask = () => {
   );
 };
 
-const TasksItem = ({ task, id }) => {
+const TasksItem = ({ task, id, date, isComplete }) => {
   const [isChecked, setIsChcked] = useState(false);
   const [isEdit, setIsEdit] = useState(true);
   const [editTask, setEditTask] = useState(task);
-  const [checkedBox, setCheckedBox] = useState();
+  const strDate = new Date(date).toLocaleDateString();
   const editInput = useRef();
   const changeHandler = () => {
+    if (isComplete === false) {
+      const completedTask = {
+        isComplete: true,
+      };
+      fetch(`http://localhost:3001/data/${id}`, {
+        method: "PATCH",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(completedTask),
+      });
+      window.location.reload();
+    } else if (isComplete === true) {
+      const completedTask = {
+        isComplete: false,
+      };
+      fetch(`http://localhost:3001/data/${id}`, {
+        method: "PATCH",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(completedTask),
+      });
+      window.location.reload();
+    }
+
     setIsChcked(!isChecked);
     setIsEdit(true);
   };
@@ -64,10 +91,11 @@ const TasksItem = ({ task, id }) => {
       window.location.reload();
     }
   };
-
+  console.log("isComplete", isComplete);
+  console.log("isChecked", isChecked);
   return (
     <div className="TasksItem">
-      <div className={isChecked ? "chckedTaskBox" : "taskItemBox"}>
+      <div className={isComplete === true ? "chckedTaskBox" : "taskItemBox"}>
         <div className="checkBox">
           <input
             type={"checkbox"}
@@ -77,18 +105,21 @@ const TasksItem = ({ task, id }) => {
         </div>
 
         <div className="taskBox">
-          {isChecked ? (
-            <ChckedTask />
-          ) : isEdit ? (
-            <div className="taskBox">{task}</div>
-          ) : (
-            <textarea
-              className="editTextArea"
-              value={editTask}
-              onChange={(e) => setEditTask(e.target.value)}
-              ref={editInput}
-            />
-          )}
+          <div className="taskBox-Content">
+            {isComplete === true ? (
+              <ChckedTask />
+            ) : isEdit ? (
+              <div>{task}</div>
+            ) : (
+              <textarea
+                className="editTextArea"
+                value={editTask}
+                onChange={(e) => setEditTask(e.target.value)}
+                ref={editInput}
+              />
+            )}
+          </div>
+          <div className="taskBox-Date">{strDate}</div>
         </div>
 
         <div className="buttonBox">

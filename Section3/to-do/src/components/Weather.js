@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import Loading from "../components/Loading";
 const Weather = () => {
   const [regionText, setRegionText] = useState("");
   const [region, setRegion] = useState("seoul");
@@ -23,7 +22,7 @@ const Weather = () => {
     if (weather && weather.weather[0].main === "Dust") {
       setWeatherImg("https://cdn-icons-png.flaticon.com/512/4814/4814808.png");
     }
-    if (weather && weather.weather[0].main === "Sun") {
+    if (weather && weather.weather[0].main === "Clear") {
       setWeatherImg("https://cdn-icons-png.flaticon.com/512/4814/4814275.png");
     }
     if (weather && weather.weather[0].main === "Sand") {

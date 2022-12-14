@@ -1,32 +1,22 @@
 {
   "data": [
     {
-      "task": "마이페이지,회원가입 구현",
-      "id": 2
-    },
-    {
-      "task": "안녕하세요",
-      "id": 3
+      "task": "1",
+      "date": 1671002007723,
+      "isComplete": false,
+      "id": 1
     },
     {
       "task": "1",
-      "id": 4
+      "date": 1671002329530,
+      "isComplete": false,
+      "id": 2
     },
     {
-      "task": "2",
-      "id": 5
-    },
-    {
-      "task": "3",
-      "id": 6
-    },
-    {
-      "task": "4",
-      "id": 7
-    },
-    {
-      "task": "5",
-      "id": 8
+      "task": "영어 단어 100개외우기",
+      "date": 1671005440426,
+      "isComplete": true,
+      "id": 3
     }
   ]
 }

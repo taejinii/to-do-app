@@ -9,7 +9,6 @@ const Nav = () => {
           <li onClick={() => navigate("/login")}>Log in</li>
           <li onClick={() => navigate("/signup")}>Sign up</li>
           <li onClick={() => navigate("/mypage")}>My page</li>
-          <li onClick={() => navigate("/weather")}>Weather</li>
         </ul>
       </div>
     </nav>

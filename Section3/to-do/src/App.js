@@ -7,7 +7,6 @@ import useFetch from "./util/useFecth";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Mypage from "./pages/Mypage";
-import Weather from "./pages/Weather";
 const Home = lazy(() => import("./Home"));
 function App() {
   const [tasks, isPending, error] = useFetch("http://localhost:3001/data");
@@ -25,7 +24,6 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/singnup" element={<Signup />} />
             <Route path="/mypage" element={<Mypage />} />
-            <Route path="/weather" element={<Weather />} />
           </Routes>
         </Suspense>
       </div>
