@@ -10,6 +10,8 @@ import Mypage from "./pages/Mypage";
 const Home = lazy(() => import("./Home"));
 function App() {
   const [tasks, isPending, error] = useFetch("http://localhost:3001/data");
+  console.log(tasks);
+  console.log(error);
   return (
     <BrowserRouter>
       {error && <div>{error}</div>}
